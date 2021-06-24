@@ -1,0 +1,393 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>jinada</title>
+	<meta name="description" content="Documentation for jinada">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+	<script async src="assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">jinada</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<h1>jinada</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<a href="#jinada" id="jinada" style="color: inherit; text-decoration: none;">
+					<h1>Jinada</h1>
+				</a>
+				<p><a href="https://www.npmjs.com/package/jinada"><img src="https://img.shields.io/npm/v/jinada" alt=""></a>
+				<a href="https://www.codefactor.io/repository/github/sinkaroid/jinada"><img src="https://www.codefactor.io/repository/github/sinkaroid/jinada/badge" alt="CodeFactor"></a>  </p>
+				<a href="#liquipedia-dota" id="liquipedia-dota" style="color: inherit; text-decoration: none;">
+					<h2>Liquipedia Dota</h2>
+				</a>
+				<p>Unofficial wrapper for Liquipedia Dota.<br>This wrapper isn&#39;t completed yet but rn you can competitive interaction with:</p>
+				<ul>
+					<li>Get Latest roster transfer</li>
+					<li>Get Ongoing tourney</li>
+					<li>Get Upcoming tourney</li>
+					<li>Get Completed tourney</li>
+					<li>Get Dota of the Days fact.</li>
+				</ul>
+				<a href="#installation" id="installation" style="color: inherit; text-decoration: none;">
+					<h2>Installation</h2>
+				</a>
+				<pre><code><span style="color: #001080">npm</span><span style="color: #000000"> </span><span style="color: #001080">i</span><span style="color: #000000"> </span><span style="color: #001080">jinada</span>
+</code></pre>
+				<a href="#example" id="example" style="color: inherit; text-decoration: none;">
+					<h2>Example</h2>
+				</a>
+				<pre><code class="language-js"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">Liquipedia</span><span style="color: #000000"> = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;jinada&#039;</span><span style="color: #000000">);</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">jinada</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #001080">Liquipedia</span><span style="color: #000000">.</span><span style="color: #795E26">Client</span><span style="color: #000000">();</span>
+
+<span style="color: #001080">jinada</span><span style="color: #000000">.</span><span style="color: #795E26">getRoster</span><span style="color: #000000">().</span><span style="color: #795E26">then</span><span style="color: #000000">((</span><span style="color: #001080">data</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #001080">data</span><span style="color: #000000">);</span>
+<span style="color: #000000">});</span>
+</code></pre>
+				<p>Returns latest player transfer:</p>
+				<pre><code><span style="color: #000000">[</span>
+<span style="color: #000000">  {</span>
+<span style="color: #000000">    </span><span style="color: #001080">date:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;2021-06-21&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">player_list:</span><span style="color: #000000"> [ </span><span style="color: #A31515">&#039;5up&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;empyreaN&#039;</span><span style="color: #000000"> ],</span>
+<span style="color: #000000">    </span><span style="color: #001080">old_team:</span><span style="color: #000000"> [],</span>
+<span style="color: #000000">    </span><span style="color: #001080">new_team:</span><span style="color: #000000"> [ </span><span style="color: #A31515">&#039;simply TOOBASED&#039;</span><span style="color: #000000"> ]</span>
+<span style="color: #000000">  },</span>
+<span style="color: #000000">  {</span>
+<span style="color: #000000">    </span><span style="color: #001080">date:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;2021-06-21&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">player_list:</span><span style="color: #000000"> [ </span><span style="color: #A31515">&#039;Jubei&#039;</span><span style="color: #000000"> ],</span>
+<span style="color: #000000">    </span><span style="color: #001080">old_team:</span><span style="color: #000000"> [],</span>
+<span style="color: #000000">    </span><span style="color: #001080">new_team:</span><span style="color: #000000"> []</span>
+<span style="color: #000000">  },</span>
+<span style="color: #000000">  {</span>
+<span style="color: #000000">    </span><span style="color: #001080">date:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;2021-06-21&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">player_list:</span><span style="color: #000000"> [ </span><span style="color: #A31515">&#039;Mushi&#039;</span><span style="color: #000000"> ],</span>
+<span style="color: #000000">    </span><span style="color: #001080">old_team:</span><span style="color: #000000"> [],</span>
+<span style="color: #000000">    </span><span style="color: #001080">new_team:</span><span style="color: #000000"> [ </span><span style="color: #A31515">&#039;TNC Predator&#039;</span><span style="color: #000000"> ]</span>
+<span style="color: #000000">  },</span>
+<span style="color: #000000">  {</span>
+<span style="color: #000000">    </span><span style="color: #001080">date:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;2021-06-19&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">player_list:</span><span style="color: #000000"> [ </span><span style="color: #A31515">&#039;Lolingblue&#039;</span><span style="color: #000000"> ],</span>
+<span style="color: #000000">    </span><span style="color: #001080">old_team:</span><span style="color: #000000"> [],</span>
+<span style="color: #000000">    </span><span style="color: #001080">new_team:</span><span style="color: #000000"> [ </span><span style="color: #A31515">&#039;Interitus&#039;</span><span style="color: #000000"> ]</span>
+<span style="color: #000000">  },</span>
+<span style="color: #000000">  {</span>
+<span style="color: #000000">    </span><span style="color: #001080">date:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;2021-06-19&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">player_list:</span><span style="color: #000000"> [ </span><span style="color: #A31515">&#039;AMINN&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;DFlash&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;fcr&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;H1j4ck&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;Rayuur&#039;</span><span style="color: #000000"> ],</span>
+<span style="color: #000000">    </span><span style="color: #001080">old_team:</span><span style="color: #000000"> [],</span>
+<span style="color: #000000">    </span><span style="color: #001080">new_team:</span><span style="color: #000000"> [ </span><span style="color: #A31515">&#039;Interitus&#039;</span><span style="color: #000000"> ]</span>
+<span style="color: #000000">  },</span>
+<span style="color: #000000">  {</span>
+<span style="color: #000000">    </span><span style="color: #001080">date:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;2021-06-19&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">player_list:</span><span style="color: #000000"> [ </span><span style="color: #A31515">&#039;Rap Rap&#039;</span><span style="color: #000000"> ],</span>
+<span style="color: #000000">    </span><span style="color: #001080">old_team:</span><span style="color: #000000"> [],</span>
+<span style="color: #000000">    </span><span style="color: #001080">new_team:</span><span style="color: #000000"> [ </span><span style="color: #A31515">&#039;Team Veteran&#039;</span><span style="color: #000000"> ]</span>
+<span style="color: #000000">  },</span>
+<span style="color: #000000">  {</span>
+<span style="color: #000000">    </span><span style="color: #001080">date:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;2021-06-18&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">player_list:</span><span style="color: #000000"> [ </span><span style="color: #A31515">&#039;MyPro&#039;</span><span style="color: #000000"> ],</span>
+<span style="color: #000000">    </span><span style="color: #001080">old_team:</span><span style="color: #000000"> [],</span>
+<span style="color: #000000">    </span><span style="color: #001080">new_team:</span><span style="color: #000000"> [ </span><span style="color: #A31515">&#039;Motivate.Viper Gaming&#039;</span><span style="color: #000000"> ]</span>
+<span style="color: #000000">  },</span>
+<span style="color: #000000">  {</span>
+<span style="color: #000000">    </span><span style="color: #001080">date:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;2021-06-16&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">player_list:</span><span style="color: #000000"> [ </span><span style="color: #A31515">&#039;ppd&#039;</span><span style="color: #000000"> ],</span>
+<span style="color: #000000">    </span><span style="color: #001080">old_team:</span><span style="color: #000000"> [],</span>
+<span style="color: #000000">    </span><span style="color: #001080">new_team:</span><span style="color: #000000"> []</span>
+<span style="color: #000000">  },</span>
+<span style="color: #000000">  {</span>
+<span style="color: #000000">    </span><span style="color: #001080">date:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;2021-06-15&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">player_list:</span><span style="color: #000000"> [ </span><span style="color: #A31515">&#039;Heaven&#039;</span><span style="color: #000000"> ],</span>
+<span style="color: #000000">    </span><span style="color: #001080">old_team:</span><span style="color: #000000"> [],</span>
+<span style="color: #000000">    </span><span style="color: #001080">new_team:</span><span style="color: #000000"> [ </span><span style="color: #A31515">&#039;Nemiga Gaming&#039;</span><span style="color: #000000"> ]</span>
+<span style="color: #000000">  },</span>
+<span style="color: #000000">  {</span>
+<span style="color: #000000">    </span><span style="color: #001080">date:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;2021-06-15&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">player_list:</span><span style="color: #000000"> [ </span><span style="color: #A31515">&#039;Raykill&#039;</span><span style="color: #000000"> ],</span>
+<span style="color: #000000">    </span><span style="color: #001080">old_team:</span><span style="color: #000000"> [],</span>
+<span style="color: #000000">    </span><span style="color: #001080">new_team:</span><span style="color: #000000"> [ </span><span style="color: #A31515">&#039;Latam Defenders&#039;</span><span style="color: #000000"> ]</span>
+<span style="color: #000000">  },</span>
+<span style="color: #000000">  {</span>
+<span style="color: #000000">    </span><span style="color: #001080">date:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;2021-06-15&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">player_list:</span><span style="color: #000000"> [ </span><span style="color: #A31515">&#039;Aretes&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;BlackSoul&#039;</span><span style="color: #000000"> ],</span>
+<span style="color: #000000">    </span><span style="color: #001080">old_team:</span><span style="color: #000000"> [ </span><span style="color: #A31515">&#039;Incubus Club&#039;</span><span style="color: #000000"> ],</span>
+<span style="color: #000000">    </span><span style="color: #001080">new_team:</span><span style="color: #000000"> [ </span><span style="color: #A31515">&#039;Latam Defenders&#039;</span><span style="color: #000000"> ]</span>
+<span style="color: #000000">  },</span>
+<span style="color: #000000">  {</span>
+<span style="color: #000000">    </span><span style="color: #001080">date:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;2021-06-15&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">player_list:</span><span style="color: #000000"> [ </span><span style="color: #A31515">&#039;Angel Prince&#039;</span><span style="color: #000000"> ],</span>
+<span style="color: #000000">    </span><span style="color: #001080">old_team:</span><span style="color: #000000"> [],</span>
+<span style="color: #000000">    </span><span style="color: #001080">new_team:</span><span style="color: #000000"> [ </span><span style="color: #A31515">&#039;Latam Defenders&#039;</span><span style="color: #000000"> ]</span>
+<span style="color: #000000">  },</span>
+<span style="color: #000000">  {</span>
+<span style="color: #000000">    </span><span style="color: #001080">date:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;2021-06-15&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">player_list:</span><span style="color: #000000"> [ </span><span style="color: #A31515">&#039;Sueño&#039;</span><span style="color: #000000"> ],</span>
+<span style="color: #000000">    </span><span style="color: #001080">old_team:</span><span style="color: #000000"> [],</span>
+<span style="color: #000000">    </span><span style="color: #001080">new_team:</span><span style="color: #000000"> []</span>
+<span style="color: #000000">  },</span>
+<span style="color: #000000">  {</span>
+<span style="color: #000000">    </span><span style="color: #001080">date:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;2021-06-15&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">player_list:</span><span style="color: #000000"> [ </span><span style="color: #A31515">&#039;agressive child&#039;</span><span style="color: #000000"> ],</span>
+<span style="color: #000000">    </span><span style="color: #001080">old_team:</span><span style="color: #000000"> [],</span>
+<span style="color: #000000">    </span><span style="color: #001080">new_team:</span><span style="color: #000000"> [ </span><span style="color: #A31515">&#039;Spider Pigzs&#039;</span><span style="color: #000000"> ]</span>
+<span style="color: #000000">  },</span>
+<span style="color: #000000">  {</span>
+<span style="color: #000000">    </span><span style="color: #001080">date:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;2021-06-15&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">player_list:</span><span style="color: #000000"> [ </span><span style="color: #A31515">&#039;dnz&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;Funn1k&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;LeBronDota&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;No!ob&#039;</span><span style="color: #000000"> ],</span>
+<span style="color: #000000">    </span><span style="color: #001080">old_team:</span><span style="color: #000000"> [],</span>
+<span style="color: #000000">    </span><span style="color: #001080">new_team:</span><span style="color: #000000"> [ </span><span style="color: #A31515">&#039;Spider Pigzs&#039;</span><span style="color: #000000"> ]</span>
+<span style="color: #000000">  },</span>
+<span style="color: #000000">  {</span>
+<span style="color: #000000">    </span><span style="color: #001080">date:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;2021-06-15&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">player_list:</span><span style="color: #000000"> [ </span><span style="color: #A31515">&#039;RdO&#039;</span><span style="color: #000000"> ],</span>
+<span style="color: #000000">    </span><span style="color: #001080">old_team:</span><span style="color: #000000"> [],</span>
+<span style="color: #000000">    </span><span style="color: #001080">new_team:</span><span style="color: #000000"> []</span>
+<span style="color: #000000">  },</span>
+<span style="color: #000000">  {</span>
+<span style="color: #000000">    </span><span style="color: #001080">date:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;2021-06-15&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">player_list:</span><span style="color: #000000"> [ </span><span style="color: #A31515">&#039;SumaiL&#039;</span><span style="color: #000000"> ],</span>
+<span style="color: #000000">    </span><span style="color: #001080">old_team:</span><span style="color: #000000"> [],</span>
+<span style="color: #000000">    </span><span style="color: #001080">new_team:</span><span style="color: #000000"> [ </span><span style="color: #A31515">&#039;OG&#039;</span><span style="color: #000000"> ]</span>
+<span style="color: #000000">  },</span>
+<span style="color: #000000">  {</span>
+<span style="color: #000000">    </span><span style="color: #001080">date:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;2021-06-14&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">player_list:</span><span style="color: #000000"> [ </span><span style="color: #A31515">&#039;eine&#039;</span><span style="color: #000000"> ],</span>
+<span style="color: #000000">    </span><span style="color: #001080">old_team:</span><span style="color: #000000"> [ </span><span style="color: #A31515">&#039;Gambit-2&#039;</span><span style="color: #000000"> ],</span>
+<span style="color: #000000">    </span><span style="color: #001080">new_team:</span><span style="color: #000000"> [ </span><span style="color: #A31515">&#039;AS Monaco Gambit&#039;</span><span style="color: #000000"> ]</span>
+<span style="color: #000000">  },</span>
+<span style="color: #000000">  {</span>
+<span style="color: #000000">    </span><span style="color: #001080">date:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;2021-06-14&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">player_list:</span><span style="color: #000000"> [ </span><span style="color: #A31515">&#039;ana&#039;</span><span style="color: #000000"> ],</span>
+<span style="color: #000000">    </span><span style="color: #001080">old_team:</span><span style="color: #000000"> [ </span><span style="color: #A31515">&#039;OG&#039;</span><span style="color: #000000"> ],</span>
+<span style="color: #000000">    </span><span style="color: #001080">new_team:</span><span style="color: #000000"> []</span>
+<span style="color: #000000">  },</span>
+<span style="color: #000000">  {</span>
+<span style="color: #000000">    </span><span style="color: #001080">date:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;2021-06-14&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">player_list:</span><span style="color: #000000"> [ </span><span style="color: #A31515">&#039;BoraNija&#039;</span><span style="color: #000000"> ],</span>
+<span style="color: #000000">    </span><span style="color: #001080">old_team:</span><span style="color: #000000"> [],</span>
+<span style="color: #000000">    </span><span style="color: #001080">new_team:</span><span style="color: #000000"> [ </span><span style="color: #A31515">&#039;Hellbear Smashers&#039;</span><span style="color: #000000"> ]</span>
+<span style="color: #000000">  },</span>
+<span style="color: #000000">  {</span>
+<span style="color: #000000">    </span><span style="color: #001080">date:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;2021-06-14&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">player_list:</span><span style="color: #000000"> [ </span><span style="color: #A31515">&#039;Enryu&#039;</span><span style="color: #000000"> ],</span>
+<span style="color: #000000">    </span><span style="color: #001080">old_team:</span><span style="color: #000000"> [],</span>
+<span style="color: #000000">    </span><span style="color: #001080">new_team:</span><span style="color: #000000"> [ </span><span style="color: #A31515">&#039;OB Esports x Neon&#039;</span><span style="color: #000000"> ]</span>
+<span style="color: #000000">  },</span>
+<span style="color: #000000">  {</span>
+<span style="color: #000000">    </span><span style="color: #001080">date:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;2021-06-14&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">player_list:</span><span style="color: #000000"> [ </span><span style="color: #A31515">&#039;Moon&#039;</span><span style="color: #000000"> ],</span>
+<span style="color: #000000">    </span><span style="color: #001080">old_team:</span><span style="color: #000000"> [ </span><span style="color: #A31515">&#039;Fnatic&#039;</span><span style="color: #000000"> ],</span>
+<span style="color: #000000">    </span><span style="color: #001080">new_team:</span><span style="color: #000000"> [ </span><span style="color: #A31515">&#039;Team SMG&#039;</span><span style="color: #000000"> ]</span>
+<span style="color: #000000">  },</span>
+<span style="color: #000000">  {</span>
+<span style="color: #000000">    </span><span style="color: #001080">date:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;2021-06-14&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">player_list:</span><span style="color: #000000"> [ </span><span style="color: #A31515">&#039;Stormstormer&#039;</span><span style="color: #000000"> ],</span>
+<span style="color: #000000">    </span><span style="color: #001080">old_team:</span><span style="color: #000000"> [],</span>
+<span style="color: #000000">    </span><span style="color: #001080">new_team:</span><span style="color: #000000"> []</span>
+<span style="color: #000000">  },</span>
+<span style="color: #000000">  {</span>
+<span style="color: #000000">    </span><span style="color: #001080">date:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;2021-06-14&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">player_list:</span><span style="color: #000000"> [ </span><span style="color: #A31515">&#039;pieliedie&#039;</span><span style="color: #000000"> ],</span>
+<span style="color: #000000">    </span><span style="color: #001080">old_team:</span><span style="color: #000000"> [],</span>
+<span style="color: #000000">    </span><span style="color: #001080">new_team:</span><span style="color: #000000"> [ </span><span style="color: #A31515">&#039;Team Bald Reborn&#039;</span><span style="color: #000000"> ]</span>
+<span style="color: #000000">  },</span>
+<span style="color: #000000">  {</span>
+<span style="color: #000000">    </span><span style="color: #001080">date:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;2021-06-14&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">player_list:</span><span style="color: #000000"> [ </span><span style="color: #A31515">&#039;5up&#039;</span><span style="color: #000000"> ],</span>
+<span style="color: #000000">    </span><span style="color: #001080">old_team:</span><span style="color: #000000"> [],</span>
+<span style="color: #000000">    </span><span style="color: #001080">new_team:</span><span style="color: #000000"> []</span>
+<span style="color: #000000">  },</span>
+<span style="color: #000000">  {</span>
+<span style="color: #000000">    </span><span style="color: #001080">date:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;2021-06-13&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">player_list:</span><span style="color: #000000"> [ </span><span style="color: #A31515">&#039;PlayHard&#039;</span><span style="color: #000000"> ],</span>
+<span style="color: #000000">    </span><span style="color: #001080">old_team:</span><span style="color: #000000"> [],</span>
+<span style="color: #000000">    </span><span style="color: #001080">new_team:</span><span style="color: #000000"> []</span>
+<span style="color: #000000">  },</span>
+<span style="color: #000000">  {</span>
+<span style="color: #000000">    </span><span style="color: #001080">date:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;2021-06-13&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">player_list:</span><span style="color: #000000"> [ </span><span style="color: #A31515">&#039;Mice&#039;</span><span style="color: #000000"> ],</span>
+<span style="color: #000000">    </span><span style="color: #001080">old_team:</span><span style="color: #000000"> [],</span>
+<span style="color: #000000">    </span><span style="color: #001080">new_team:</span><span style="color: #000000"> []</span>
+<span style="color: #000000">  },</span>
+<span style="color: #000000">  {</span>
+<span style="color: #000000">    </span><span style="color: #001080">date:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;2021-06-12&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">player_list:</span><span style="color: #000000"> [ </span><span style="color: #A31515">&#039;Fear&#039;</span><span style="color: #000000"> ],</span>
+<span style="color: #000000">    </span><span style="color: #001080">old_team:</span><span style="color: #000000"> [],</span>
+<span style="color: #000000">    </span><span style="color: #001080">new_team:</span><span style="color: #000000"> [ </span><span style="color: #A31515">&#039;Thunder Predator&#039;</span><span style="color: #000000"> ]</span>
+<span style="color: #000000">  },</span>
+<span style="color: #000000">  {</span>
+<span style="color: #000000">    </span><span style="color: #001080">date:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;2021-06-11&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">player_list:</span><span style="color: #000000"> [ </span><span style="color: #A31515">&#039;DoT&#039;</span><span style="color: #000000"> ],</span>
+<span style="color: #000000">    </span><span style="color: #001080">old_team:</span><span style="color: #000000"> [],</span>
+<span style="color: #000000">    </span><span style="color: #001080">new_team:</span><span style="color: #000000"> [ </span><span style="color: #A31515">&#039;UD Vessuwan&#039;</span><span style="color: #000000"> ]</span>
+<span style="color: #000000">  },</span>
+<span style="color: #000000">  {</span>
+<span style="color: #000000">    </span><span style="color: #001080">date:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;2021-06-11&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">player_list:</span><span style="color: #000000"> [ </span><span style="color: #A31515">&#039;JG&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;Ken&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;LuziFy&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;Rupido&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;Teehee&#039;</span><span style="color: #000000"> ],</span>
+<span style="color: #000000">    </span><span style="color: #001080">old_team:</span><span style="color: #000000"> [],</span>
+<span style="color: #000000">    </span><span style="color: #001080">new_team:</span><span style="color: #000000"> [ </span><span style="color: #A31515">&#039;UD Vessuwan&#039;</span><span style="color: #000000"> ]</span>
+<span style="color: #000000">  }</span>
+<span style="color: #000000">]</span>
+
+
+</code></pre>
+				<a href="#documentation" id="documentation" style="color: inherit; text-decoration: none;">
+					<h2>Documentation</h2>
+				</a>
+				<a href="#getroster" id="getroster" style="color: inherit; text-decoration: none;">
+					<h3>getRoster()</h3>
+				</a>
+				<p>Returns latest transfer object.</p>
+				<pre><code class="language-js"><span style="color: #001080">jinada</span><span style="color: #000000">.</span><span style="color: #795E26">getRoster</span><span style="color: #000000">().</span><span style="color: #795E26">then</span><span style="color: #000000">((</span><span style="color: #001080">data</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #001080">data</span><span style="color: #000000">);</span>
+<span style="color: #000000">});</span>
+</code></pre>
+				<a href="#getupcomingtourney" id="getupcomingtourney" style="color: inherit; text-decoration: none;">
+					<h3>getUpcomingtourney()</h3>
+				</a>
+				<p>Returns Upcoming tourney.</p>
+				<pre><code class="language-js"><span style="color: #001080">jinada</span><span style="color: #000000">.</span><span style="color: #795E26">getUpcomingtourney</span><span style="color: #000000">().</span><span style="color: #795E26">then</span><span style="color: #000000">((</span><span style="color: #001080">data</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #001080">data</span><span style="color: #000000">);</span>
+<span style="color: #000000">});</span>
+</code></pre>
+				<a href="#getongoingtourney" id="getongoingtourney" style="color: inherit; text-decoration: none;">
+					<h3>getOngoingtourney()</h3>
+				</a>
+				<p>Returns Ongoing tourney.</p>
+				<pre><code class="language-js"><span style="color: #001080">jinada</span><span style="color: #000000">.</span><span style="color: #795E26">getOngoingtourney</span><span style="color: #000000">().</span><span style="color: #795E26">then</span><span style="color: #000000">((</span><span style="color: #001080">data</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #001080">data</span><span style="color: #000000">);</span>
+<span style="color: #000000">});</span>
+</code></pre>
+				<a href="#getcompletedtourney" id="getcompletedtourney" style="color: inherit; text-decoration: none;">
+					<h3>getCompletedtourney()</h3>
+				</a>
+				<p>Returns Completed/Ended tourney.</p>
+				<pre><code class="language-js"><span style="color: #001080">jinada</span><span style="color: #000000">.</span><span style="color: #795E26">getCompletedtourney</span><span style="color: #000000">().</span><span style="color: #795E26">then</span><span style="color: #000000">((</span><span style="color: #001080">data</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #001080">data</span><span style="color: #000000">);</span>
+<span style="color: #000000">});</span>
+</code></pre>
+				<a href="#getdotd" id="getdotd" style="color: inherit; text-decoration: none;">
+					<h3>getDOTD()</h3>
+				</a>
+				<p>Returns Dota of the Day (related day fact).</p>
+				<pre><code class="language-js"><span style="color: #001080">jinada</span><span style="color: #000000">.</span><span style="color: #795E26">getDOTD</span><span style="color: #000000">().</span><span style="color: #795E26">then</span><span style="color: #000000">((</span><span style="color: #001080">data</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #001080">data</span><span style="color: #000000">);</span>
+<span style="color: #000000">});</span>
+</code></pre>
+				<a href="#todo" id="todo" style="color: inherit; text-decoration: none;">
+					<h2>Todo</h2>
+				</a>
+				<ul>
+					<li>  [x] Transfer</li>
+					<li>  [x] Tournaments</li>
+					<li>  [ ] Player</li>
+					<li>  [ ] Teams</li>
+					<li>  [ ] Stats</li>
+					<li>  [ ] Patches</li>
+				</ul>
+				<a href="#legal" id="legal" style="color: inherit; text-decoration: none;">
+					<h2>Legal</h2>
+				</a>
+				<p>This tool can be freely copied, modified, altered, distributed without any attribution whatsoever. However, if you feel like this tool deserves an attribution, mention it. It won&#39;t hurt anybody :)</p>
+				<p>Please, read the <a href="LICENSE">license terms</a>. Don&#39;t worry, it can be read in less than 30 seconds, unless you have some sort of reading disability - in that case, I&#39;m wondering why you&#39;re still reading this text. Really. Stop. Please. I mean, seriously. Why are you still reading?</p>
+				<a href="#third-party-app" id="third-party-app" style="color: inherit; text-decoration: none;">
+					<h2>Third-party app</h2>
+				</a>
+				<p>Definitely this wrapper only used for my own personal microservice, but yeah i make this public now</p>
+				<ul>
+					<li><a href="https://telegram.me/Scathachbot">Telegram:aiogram</a></li>
+					<li><a href="https://discord.bots.gg/bots/724047481561809007">Discord:djsl</a></li>
+				</ul>
+				<a href="#acknowledgements" id="acknowledgements" style="color: inherit; text-decoration: none;">
+					<h2>Acknowledgements</h2>
+				</a>
+				<p>Since this tool includes some contributions, and I&#39;m not an asshole, I&#39;ll publically thank the following users for their help:</p>
+				<ul>
+					<li><a href="https://liquipedia.net/dota2">Liquipedia/dota2</a> :: actionable data</li>
+					<li><a href="https://github.com/namdevel">@annam</a> :: tags handler</li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="modules.html">Exports</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-class">
+						<a href="classes/client.html" class="tsd-kind-icon">Client</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
